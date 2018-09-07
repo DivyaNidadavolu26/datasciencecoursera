@@ -169,15 +169,15 @@ levels(second_activity$weekday) <- list(weekday = c("Monday","Tuesday","Wednesda
 5.2. Make a panel plot containing a time series plot (i.e. type = “l”) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
 
 ```{r}
+par(mfrow=c(2,1))
 
+sec_act_weekday <- second_activity$weekday
+
+func01 <- aggregate(steps_per_day ~ interval, FUN = mean)
+
+with(second_activity[sec_act_weekday=="weekend",], plot(func01), main = "Weekends")
+
+with(second_activity[sec_act_weekday=="weekday",], plot(func01), main="weekdays")
+
+dev.off()
 ```
-
-
-
-
-
-
-
-
-
-
