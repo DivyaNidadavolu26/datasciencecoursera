@@ -25,8 +25,8 @@ activity <- read.csv(unz("activity.zip", "activity.csv"))
 sapply(activity, class)
 ```
 
-##     steps      date  interval 
-## "integer"  "factor" "integer"
+    ##     steps      date  interval 
+    ## "integer"  "factor" "integer"
 
 
 Process the data into a suitable format to analyze
@@ -37,12 +37,7 @@ is.regular(activity$date)
 unique(activity$date)
 ```
 
-## 
-## Attaching package: 'zoo'
-## 
-## The following objects are masked from 'package:base':
-## 
-##     as.Date, as.Date.numeric
+    ##     as.Date, as.Date.numeric
 
 2. What is mean total number of steps taken per day?
 ----------------------------------------------------
@@ -106,7 +101,7 @@ max_value
 
 ```
 
-## [1] 806
+    ## [1] 806
 
 Imputing missing values
 -----------------------
@@ -118,7 +113,7 @@ na_sum_value <- sum(is.na(activity))
 na_sum_value
 ```
 
-## [1] 2304
+    ## [1] 2304
 
 4.2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 
@@ -150,8 +145,8 @@ sec_act_steps[is.na(sec_act_steps)] <- mean(na.omit(sec_act_steps))
 sec_act_date <- second_activity$date
 ```
 
-##     steps      date  interval 
-## "integer"    "Date" "integer"
+    ##     steps      date  interval 
+    ## "integer"    "Date" "integer"
 
 4.4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
@@ -185,11 +180,12 @@ fun2_2 <- aggregate(step_date_function,data=second_activity, FUN=median)
 
 ![pic3](https://user-images.githubusercontent.com/34182120/45229412-5b119780-b2e3-11e8-8e4b-8107d643b51e.png)
 
-## Are there differences in activity patterns between weekdays and weekends?
+Are there differences in activity patterns between weekdays and weekends?
+-------------------------------------------------------------------------
 
 5.1. Create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
 
-```{r}
+``` r
 second_activity$weekday <- factor(format(sec_act_date,"%A"))
 
 levels(second_activity$weekday) <- list(weekday = c("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"))
@@ -198,7 +194,7 @@ levels(second_activity$weekday) <- list(weekday = c("Monday","Tuesday","Wednesda
 
 5.2. Make a panel plot containing a time series plot (i.e. type = “l”) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
 
-```{r}
+``` r
 par(mfrow=c(2,1))
 
 sec_act_weekday <- second_activity$weekday
