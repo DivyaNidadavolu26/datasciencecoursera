@@ -144,9 +144,11 @@ plot(step_day2,type="h",lwd=5,lend="square",main="With NAs filled")
 abline(h=seq(0,20000,2500),lty="dashed")
 
 dev.off()
+```
 
-##The following operations would be hiding interesting patterns such as the inactivity during particular days of week.
+## The following operations would be hiding interesting patterns such as the inactivity during particular days of week.
 
+```{r}
 fun1 <- aggregate(step_date_function, data = activity, FUN=mean)
 fun1_1 <- aggregate(step_date_function, data = activity, FUN=median)
 
