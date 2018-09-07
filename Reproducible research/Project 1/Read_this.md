@@ -53,6 +53,5 @@ histo_show <- plot(steps_per_day, type="h",lwd=10,lend="square")
 histo_show
 ```
 
-![Picture 1]
-(https://github.com/DivyaNidadavolu26/datasciencecoursera/blob/master/Reproducible%20research/Project%201/Pictures/pic1.png)
+[[https://github.com/DivyaNidadavolu26/datasciencecoursera/blob/master/Reproducible%20research/Project%201/Pictures/pic1.PNG]]
 
