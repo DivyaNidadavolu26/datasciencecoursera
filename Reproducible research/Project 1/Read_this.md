@@ -39,8 +39,9 @@ unique(activity$date)
 
     ##     as.Date, as.Date.numeric
 
-2. What is mean total number of steps taken per day?
+What is mean total number of steps taken per day?
 ----------------------------------------------------
+
 2.1 Calculate the total number of steps taken per day
 
 ``` r
